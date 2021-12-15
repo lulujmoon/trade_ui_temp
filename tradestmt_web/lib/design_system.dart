@@ -8,17 +8,22 @@ class DesignSystem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(
-        padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 30),
-        children: [
-          TradeText.headingOne('Design System'),
-          verticalSpaceSmall,
-          Divider(),
-          verticalSpaceSmall,
-          ...buttonWidgets,
-          ...textWidgets,
-          ...inputFields,
-        ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              TradeText.headingOne('Design System'),
+              verticalSpaceSmall,
+              Divider(),
+              verticalSpaceSmall,
+              ...buttonWidgets,
+              ...textWidgets,
+              ...inputFields,
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -79,28 +84,47 @@ class DesignSystem extends StatelessWidget {
 
   List<Widget> get inputFields => [
     TradeText.headline('Input Field'),
+    verticalSpaceMedium,
+    TradeText.body('Medium White'),
     verticalSpaceSmall,
-    TradeText.body('Normal'),
-    verticalSpaceSmall,
-    TradeInputField(
+    TradeInputField.mediumWhite(
       controller: TextEditingController(),
-      placeholder: 'Enter Password',
+      placeholder: 'Medium White',
     ),
     verticalSpaceSmall,
-    TradeText.body('Leading Icon'),
+    TradeText.body('Short White'),
     verticalSpaceSmall,
-    TradeInputField(
+    TradeInputField.shortWhite(
       controller: TextEditingController(),
-      leading: Icon(Icons.reset_tv),
-      placeholder: 'Enter TV Code',
+      placeholder: 'Short White',
     ),
     verticalSpaceSmall,
-    TradeText.body('Trailing Icon'),
+    TradeText.body('Medium Blue'),
     verticalSpaceSmall,
-    TradeInputField(
+    TradeInputField.mediumBlue(
       controller: TextEditingController(),
-      trailing: Icon(Icons.clear_outlined),
-      placeholder: 'Search for things',
+      placeholder: 'Medium Blue',
     ),
+    verticalSpaceSmall,
+    TradeText.body('Short Blue'),
+    verticalSpaceSmall,
+    TradeInputField.shortBlue(
+      controller: TextEditingController(),
+      placeholder: 'Short Blue',
+    ),
+    verticalSpaceSmall,
+    TradeInputField.shortBlue(
+      controller: TextEditingController(),
+      placeholder: 'Short Blue with Leading Icon',
+      leading: Icon(Icons.home),
+    ),
+    verticalSpaceSmall,
+    TradeText.body('Large Blue'),
+    verticalSpaceSmall,
+    TradeInputField.largeBlue(
+      controller: TextEditingController(),
+      placeholder: 'Large Blue',
+    ),
+    verticalSpaceSmall,
   ];
 }
