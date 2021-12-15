@@ -21,6 +21,7 @@ class DesignSystem extends StatelessWidget {
               ...buttonWidgets,
               ...textWidgets,
               ...inputFields,
+              ...tradeCheckboxes
             ],
           ),
         ),
@@ -125,6 +126,14 @@ class DesignSystem extends StatelessWidget {
       controller: TextEditingController(),
       placeholder: 'Large Blue',
     ),
-    verticalSpaceSmall,
+    verticalSpaceMedium,
+  ];
+
+  List<Widget> get tradeCheckboxes => [
+    TradeText.headline('Checkboxes'),
+    verticalSpaceMedium,
+    TradeCheckbox(isChecked: true, changed: (value){}),
+    TradeCheckbox(isChecked: false, changed: (value){}),
+    verticalSpaceMedium,
   ];
 }

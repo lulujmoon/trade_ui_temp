@@ -6,8 +6,8 @@ class TradeInputField extends StatelessWidget {
   final TextEditingController controller;
   final String placeholder;
   final Widget? leading;
-  //final Widget? trailing;
   final bool password;
+  //final Widget? trailing;
   //final void Function()? trailingTapped;
   final Color fillColor;
   final Color borderColor;
@@ -91,7 +91,7 @@ class TradeInputField extends StatelessWidget {
   })  : this.fillColor = lightBlueColor3,
         this.borderColor = dustBlueColor1,
         this.width = 470,
-        this.height = 770,
+        this.height = 200,
         this.isLarge = true;
 
   @override
@@ -106,7 +106,7 @@ class TradeInputField extends StatelessWidget {
         maxLines: isLarge?20:1,
         decoration: InputDecoration(
           label: Text(placeholder),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          contentPadding: isLarge? const EdgeInsets.symmetric(vertical: 20, horizontal: 20) : const EdgeInsets.symmetric(horizontal: 20) ,
           filled: true,
           fillColor: fillColor,
           prefixIcon: leading,

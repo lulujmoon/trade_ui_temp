@@ -4,6 +4,7 @@ library trade_ui;
 export 'src/widgets/input_field.dart';
 export 'src/widgets/trade_button.dart';
 export 'src/widgets/trade_text.dart';
+export 'src/widgets/trade_checkbox.dart';
 export 'src/widgets/ui_helpers.dart';
 
 /// Colors Export
