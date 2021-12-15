@@ -8,6 +8,7 @@ export 'src/widgets/ui_helpers.dart';
 
 /// Colors Export
 export 'src/shared/app_colors.dart';
+export 'src/shared/styles.dart';
 
 /// A Calculator.
 class Calculator {

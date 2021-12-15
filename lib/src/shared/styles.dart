@@ -29,6 +29,11 @@ const TextStyle bodyStyle = TextStyle(
   fontWeight: FontWeight.w400,
 );
 
+const TextStyle bodyStyleBold = TextStyle(
+  fontSize: 14,
+  fontWeight: FontWeight.bold,
+);
+
 const TextStyle subheadingStyle = TextStyle(
   fontSize: 20,
   fontWeight: FontWeight.w400,

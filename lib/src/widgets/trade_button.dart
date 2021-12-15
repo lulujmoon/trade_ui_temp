@@ -4,70 +4,127 @@ import 'package:trade_ui/src/shared/styles.dart';
 
 class TradeButton extends StatelessWidget {
   final String title;
-  final bool disabled;
-  final bool busy;
   final void Function()? onTap;
-  final bool outline;
-  final Widget? leading;
+  final double width;
+  final double height;
+  final Color fillColor;
+  final Color borderColor;
+  final TextStyle textStyle;
+  final Color? textColor;
 
-  const TradeButton({
+  TradeButton({
     Key? key,
     required this.title,
-    this.disabled = false,
-    this.busy = false,
     this.onTap,
-    this.leading,
-  })  : outline = false,
-        super(key: key);
+    this.width = 100,
+    this.height = 100,
+    this.fillColor = primaryBlueColor1,
+    this.borderColor = primaryBlueColor1,
+    this.textStyle = bodyStyle,
+    this.textColor,
+  })  : super(key: key);
 
-  const TradeButton.outline({
+  TradeButton.largeLightBlue({
+    Key? key,
     required this.title,
     this.onTap,
-    this.leading,
-  })  : disabled = false,
-        busy = false,
-        outline = true;
+    this.textColor,
+  })  : this.height = 40,
+        this.width = 310,
+        this.fillColor = lightBlueColor4,
+        this.borderColor = dustBlueColor2,
+        this.textStyle = bodyStyle.copyWith(color: Colors.black),
+        super(key: key);
+
+  TradeButton.largeBlue({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 40,
+        this.width = 310,
+        this.fillColor = primaryBlueColor1,
+        this.borderColor = primaryBlueColor2,
+        this.textStyle = bodyStyle.copyWith(color: whiteColor),
+        super(key: key);
+
+  TradeButton.shortGrey({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 50,
+        this.width = 140,
+        this.fillColor = lightBlueColor2,
+        this.borderColor = dustBlueColor4,
+        this.textStyle = bodyStyleBold.copyWith(color: dustBlueColor3),
+        super(key: key);
+
+  TradeButton.shortBlue({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 50,
+        this.width = 140,
+        this.fillColor = primaryBlueColor1,
+        this.borderColor = primaryBlueColor2,
+        this.textStyle = bodyStyleBold.copyWith(color: whiteColor),
+        super(key: key);
+
+  TradeButton.extraLargeBlue({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 70,
+        this.width = 460,
+        this.fillColor = primaryBlueColor1,
+        this.borderColor = primaryBlueColor2,
+        this.textStyle = bodyStyleBold.copyWith(color: whiteColor, fontSize: 20),
+        super(key: key);
+
+  TradeButton.shortNavy({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 50,
+        this.width = 140,
+        this.fillColor = navyColor1,
+        this.borderColor = navyColor2,
+        this.textStyle = bodyStyleBold.copyWith(color: whiteColor),
+        super(key: key);
+
+  TradeButton.shortWhite({
+    Key? key,
+    required this.title,
+    this.onTap,
+    this.textColor,
+  })  : this.height = 50,
+        this.width = 140,
+        this.fillColor = whiteColor,
+        this.borderColor = lightGreyColor2,
+        this.textStyle = bodyStyleBold,
+        super(key: key);
+  // const TradeButton.outline({
+  //   required this.title,
+  //   this.onTap,
+  //   this.leading,
+  // })  : disabled = false,
+  //       busy = false,
+  //       outline = true;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onTap,
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 350),
-        width: double.infinity,
-        height: 48,
-        alignment: Alignment.center,
-        decoration: !outline
-            ? BoxDecoration(
-                color: !disabled ? kcPrimaryColor : kcMediumGreyColor,
-                borderRadius: BorderRadius.circular(8),
-              )
-            : BoxDecoration(
-                color: Colors.transparent,
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: kcPrimaryColor,
-                  width: 1,
-                )),
-        child: !busy
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  if (leading != null) leading!,
-                  if (leading != null) SizedBox(width: 5),
-                  Text(
-                    title,
-                    style: bodyStyle.copyWith(
-                      fontWeight: !outline ? FontWeight.bold : FontWeight.w400,
-                      color: !outline ? Colors.white : kcPrimaryColor,
-                    ),
-                  ),
-                ],
-              )
-            : CircularProgressIndicator(
-                strokeWidth: 8,
-                valueColor: AlwaysStoppedAnimation(Colors.white),
-              ),
+    return OutlinedButton(
+      onPressed: onTap,
+      child: Text(title, style: textStyle.copyWith(color: textColor), ),
+      style: OutlinedButton.styleFrom(
+        fixedSize: Size(width, height),
+        backgroundColor: fillColor,
+        side: BorderSide(width: 1.0, color: borderColor),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
       ),
     );
   }

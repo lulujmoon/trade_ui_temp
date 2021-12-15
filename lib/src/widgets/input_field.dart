@@ -28,11 +28,12 @@ class TradeInputField extends StatelessWidget {
     //this.trailing,
     //this.trailingTapped,
     this.password = false,
-  })  : this.fillColor = whiteColor,
-        this.borderColor = lightGreyColor2,
-        this.width = 460,
-        this.height = 50,
-        this.isLarge = false;
+    this.fillColor = whiteColor,
+    this.borderColor = lightGreyColor2,
+    this.width = 460,
+    this.height = 50,
+    this.isLarge = false
+  });
 
   TradeInputField.mediumWhite({
     Key? key,
@@ -105,12 +106,13 @@ class TradeInputField extends StatelessWidget {
         obscureText: password,
         maxLines: isLarge?20:1,
         decoration: InputDecoration(
-          label: Text(placeholder),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          label: !isLarge? Text(placeholder): null,
+          hintText: isLarge? placeholder: null,
+          contentPadding: isLarge? const EdgeInsets.symmetric(horizontal: 20, vertical: 20): const EdgeInsets.symmetric(horizontal: 20),
           filled: true,
           fillColor: fillColor,
           prefixIcon: leading,
-          floatingLabelStyle: TextStyle(color: primaryBlueColor),
+          floatingLabelStyle: TextStyle(color: primaryBlueColor2),
           /*
           suffixIcon: trailing != null
               ? GestureDetector(
@@ -121,7 +123,7 @@ class TradeInputField extends StatelessWidget {
           */
           border: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
           errorBorder: circularBorder.copyWith(borderSide: BorderSide(color: Colors.red),),
-          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor),),
+          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor2),),
           enabledBorder: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
         ),
       ),

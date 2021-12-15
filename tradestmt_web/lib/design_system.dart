@@ -50,35 +50,102 @@ class DesignSystem extends StatelessWidget {
   List<Widget> get buttonWidgets => [
     TradeText.headline('Buttons'),
     verticalSpaceMedium,
-    TradeText.body('Normal'),
+    TradeText.body('largeDustBlue'),
     verticalSpaceSmall,
-    TradeButton(
-      title: 'SIGN IN',
+    TradeButton.largeLightBlue(
+      title: 'Type 1',
+      onTap: (){},
     ),
     verticalSpaceSmall,
-    TradeText.body('Disabled'),
+    TradeText.body('largeBlue'),
     verticalSpaceSmall,
-    TradeButton(
-      title: 'SIGN IN',
-      disabled: true,
+    TradeButton.largeBlue(
+      title: 'Type 2',
+      onTap: (){},
     ),
     verticalSpaceSmall,
-    TradeText.body('Busy'),
+    TradeText.body('shortGrey'),
+    verticalSpaceSmall,
+    TradeButton.shortGrey(
+      title: 'Type 3',
+      onTap: (){},
+    ),
+    verticalSpaceSmall,
+    TradeText.body('shortBlue'),
+    verticalSpaceSmall,
+    TradeButton.shortBlue(
+      title: 'Type 4',
+      onTap: (){},
+    ),
+    verticalSpaceSmall,
+    TradeText.body('extraLargeBlue'),
+    verticalSpaceSmall,
+    TradeButton.extraLargeBlue(
+      title: 'Type 5',
+      onTap: (){},
+    ),
+    verticalSpaceSmall,
+    TradeText.body('shortNavy'),
+    verticalSpaceSmall,
+    TradeButton.shortNavy(
+      title: 'Type 6',
+      onTap: (){},
+    ),
+
+    verticalSpaceSmall,
+    TradeText.body('send'),
     verticalSpaceSmall,
     TradeButton(
-      title: 'SIGN IN',
-      busy: true,
+      onTap: (){},
+      title: 'send',
+      height: 50,
+      width: 285,
+      fillColor: primaryBlueColor1,
+      borderColor: primaryBlueColor2,
+      textStyle: bodyStyleBold.copyWith(color: whiteColor),
     ),
+
+    verticalSpaceSmall,
+    TradeText.body('shortWhite'),
+    verticalSpaceSmall,
+    TradeButton.shortWhite(
+      title: 'Type 7',
+      textColor: Colors.black,
+      onTap: (){},
+    ),
+    verticalSpaceSmall,
+    TradeText.body('shortWhiteV2'),
+    verticalSpaceSmall,
+    TradeButton.shortWhite(
+      title: 'Type 8',
+      textColor: primaryBlueColor1,
+      onTap: (){},
+    ),
+    verticalSpaceSmall,
+    TradeText.body('shortWhiteV3'),
+    verticalSpaceSmall,
+    TradeButton.shortWhite(
+      title: 'Type 9',
+      textColor: Colors.red,
+      onTap: (){},
+    ),
+
+
+
+
+
+
+
     verticalSpaceSmall,
     TradeText.body('Outline'),
     verticalSpaceSmall,
-    TradeButton.outline(
-      title: 'Select location',
-      leading: Icon(
-        Icons.send,
-        color: kcPrimaryColor,
-      ),
-    ),
+    // TradeButton.outline(
+    //   title: 'Select location',
+    //   leading: Icon(
+    //     Icons.send,
+    //     color: kcPrimaryColor,
+    //   ),
+    // ),
     verticalSpaceMedium,
   ];
 
