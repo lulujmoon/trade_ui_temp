@@ -50,45 +50,45 @@ class DesignSystem extends StatelessWidget {
   List<Widget> get buttonWidgets => [
     TradeText.headline('Buttons'),
     verticalSpaceMedium,
-    TradeText.body('largeDustBlue'),
+    TradeText.body('largeLightBlue'),
     verticalSpaceSmall,
     TradeButton.largeLightBlue(
-      title: 'Type 1',
+      title: '310 x 40',
       onTap: (){},
     ),
     verticalSpaceSmall,
     TradeText.body('largeBlue'),
     verticalSpaceSmall,
     TradeButton.largeBlue(
-      title: 'Type 2',
+      title: '310 x 40',
       onTap: (){},
     ),
     verticalSpaceSmall,
     TradeText.body('shortGrey'),
     verticalSpaceSmall,
     TradeButton.shortGrey(
-      title: 'Type 3',
+      title: '140 x 50',
       onTap: (){},
     ),
     verticalSpaceSmall,
     TradeText.body('shortBlue'),
     verticalSpaceSmall,
     TradeButton.shortBlue(
-      title: 'Type 4',
+      title: '140 x 50',
       onTap: (){},
     ),
     verticalSpaceSmall,
     TradeText.body('extraLargeBlue'),
     verticalSpaceSmall,
     TradeButton.extraLargeBlue(
-      title: 'Type 5',
+      title: '460 x 70',
       onTap: (){},
     ),
     verticalSpaceSmall,
     TradeText.body('shortNavy'),
     verticalSpaceSmall,
     TradeButton.shortNavy(
-      title: 'Type 6',
+      title: '140 x 50',
       onTap: (){},
     ),
 
@@ -97,7 +97,7 @@ class DesignSystem extends StatelessWidget {
     verticalSpaceSmall,
     TradeButton(
       onTap: (){},
-      title: 'send',
+      title: '285 x 50',
       height: 50,
       width: 285,
       fillColor: primaryBlueColor1,
@@ -109,7 +109,7 @@ class DesignSystem extends StatelessWidget {
     TradeText.body('shortWhite'),
     verticalSpaceSmall,
     TradeButton.shortWhite(
-      title: 'Type 7',
+      title: '140 x 50',
       textColor: Colors.black,
       onTap: (){},
     ),
@@ -117,7 +117,7 @@ class DesignSystem extends StatelessWidget {
     TradeText.body('shortWhiteV2'),
     verticalSpaceSmall,
     TradeButton.shortWhite(
-      title: 'Type 8',
+      title: '140 x 50',
       textColor: primaryBlueColor1,
       onTap: (){},
     ),
@@ -125,20 +125,40 @@ class DesignSystem extends StatelessWidget {
     TradeText.body('shortWhiteV3'),
     verticalSpaceSmall,
     TradeButton.shortWhite(
-      title: 'Type 9',
+      title: '140 x 50',
       textColor: Colors.red,
       onTap: (){},
     ),
 
-
-
-
-
-
+    verticalSpaceSmall,
+    TradeText.body('roundLargeWhite'),
+    verticalSpaceSmall,
+    TradeButton.roundLargeWhite(
+      title: '140 x 35',
+      onTap: (){},
+    ),
 
     verticalSpaceSmall,
-    TradeText.body('Outline'),
+    TradeText.body('roundShortV1'),
     verticalSpaceSmall,
+    TradeButton.roundShort(
+      title: '80 x 30',
+      onTap: (){},
+    ),
+
+    verticalSpaceSmall,
+    TradeText.body('roundShortV2'),
+    verticalSpaceSmall,
+    TradeButton.roundShort(
+      title: '80 x 30',
+      onTap: (){},
+      textColor: whiteColor,
+      fillColor: primaryBlueColor1,
+      borderColor: primaryBlueColor2,
+    ),
+
+    Divider(thickness: 1.0,),
+    verticalSpaceMedium,
     // TradeButton.outline(
     //   title: 'Select location',
     //   leading: Icon(
@@ -146,7 +166,6 @@ class DesignSystem extends StatelessWidget {
     //     color: kcPrimaryColor,
     //   ),
     // ),
-    verticalSpaceMedium,
   ];
 
   List<Widget> get inputFields => [

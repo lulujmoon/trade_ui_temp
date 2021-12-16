@@ -55,16 +55,16 @@ class _SigninState extends ViewState<Signin, SigninViewModel> {
 
   List<Widget> get signinButtons => [
     verticalSpaceLarge,
-    TradeButton(
+    TradeButton.largeBlue(
       onTap: viewModel.routeToHome,
       title: 'SIGN IN',
     ),
     verticalSpaceRegular,
-    TradeButton(
+    TradeButton.largeLightBlue(
       title: 'SIGN UP',
     ),
     verticalSpaceRegular,
-    TradeButton(
+    TradeButton.shortNavy(
         onTap: viewModel.routeToDesignSystem, title: 'Design System'),
   ];
 }
