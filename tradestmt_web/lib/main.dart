@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:trade_ui/trade_ui.dart';
 import 'package:tradestmt_web/routes.dart';
@@ -5,7 +6,9 @@ import 'package:tradestmt_web/screens/view.abs.dart';
 
 import 'design_system.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -25,6 +28,7 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [routeObserver],
       initialRoute: '/',
       onGenerateRoute: _router.route,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
