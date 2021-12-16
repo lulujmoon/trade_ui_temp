@@ -11,7 +11,7 @@ class TradeCheckbox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Checkbox(value: isChecked,
       onChanged: changed,
-      activeColor: primaryBlueColor,
+      activeColor: primaryBlueColor1,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
     );
   }

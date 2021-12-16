@@ -111,7 +111,7 @@ class TradeInputField extends StatelessWidget {
           filled: true,
           fillColor: fillColor,
           prefixIcon: leading,
-          floatingLabelStyle: TextStyle(color: primaryBlueColor),
+          floatingLabelStyle: TextStyle(color: primaryBlueColor2),
 
           /*
           suffixIcon: trailing != null
@@ -123,7 +123,7 @@ class TradeInputField extends StatelessWidget {
           */
           border: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
           errorBorder: circularBorder.copyWith(borderSide: BorderSide(color: Colors.red),),
-          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor),),
+          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor2),),
           enabledBorder: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
         ),
       ),
