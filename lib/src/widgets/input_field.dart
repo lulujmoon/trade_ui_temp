@@ -105,12 +105,14 @@ class TradeInputField extends StatelessWidget {
         obscureText: password,
         maxLines: isLarge?20:1,
         decoration: InputDecoration(
-          label: Text(placeholder),
+          label: !isLarge? Text(placeholder) : null,
+          hintText: isLarge? placeholder: null,
           contentPadding: isLarge? const EdgeInsets.symmetric(vertical: 20, horizontal: 20) : const EdgeInsets.symmetric(horizontal: 20) ,
           filled: true,
           fillColor: fillColor,
           prefixIcon: leading,
           floatingLabelStyle: TextStyle(color: primaryBlueColor),
+
           /*
           suffixIcon: trailing != null
               ? GestureDetector(
