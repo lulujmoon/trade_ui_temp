@@ -6,8 +6,8 @@ class TradeInputField extends StatelessWidget {
   final TextEditingController controller;
   final String placeholder;
   final Widget? leading;
-  //final Widget? trailing;
   final bool password;
+  //final Widget? trailing;
   //final void Function()? trailingTapped;
   final Color fillColor;
   final Color borderColor;
@@ -28,12 +28,11 @@ class TradeInputField extends StatelessWidget {
     //this.trailing,
     //this.trailingTapped,
     this.password = false,
-    this.fillColor = whiteColor,
-    this.borderColor = lightGreyColor2,
-    this.width = 460,
-    this.height = 50,
-    this.isLarge = false
-  });
+  })  : this.fillColor = whiteColor,
+        this.borderColor = lightGreyColor2,
+        this.width = 460,
+        this.height = 50,
+        this.isLarge = false;
 
   TradeInputField.mediumWhite({
     Key? key,
@@ -92,7 +91,7 @@ class TradeInputField extends StatelessWidget {
   })  : this.fillColor = lightBlueColor3,
         this.borderColor = dustBlueColor1,
         this.width = 470,
-        this.height = 770,
+        this.height = 200,
         this.isLarge = true;
 
   @override
@@ -106,13 +105,14 @@ class TradeInputField extends StatelessWidget {
         obscureText: password,
         maxLines: isLarge?20:1,
         decoration: InputDecoration(
-          label: !isLarge? Text(placeholder): null,
+          label: !isLarge? Text(placeholder) : null,
           hintText: isLarge? placeholder: null,
-          contentPadding: isLarge? const EdgeInsets.symmetric(horizontal: 20, vertical: 20): const EdgeInsets.symmetric(horizontal: 20),
+          contentPadding: isLarge? const EdgeInsets.symmetric(vertical: 20, horizontal: 20) : const EdgeInsets.symmetric(horizontal: 20) ,
           filled: true,
           fillColor: fillColor,
           prefixIcon: leading,
-          floatingLabelStyle: TextStyle(color: primaryBlueColor2),
+          floatingLabelStyle: TextStyle(color: primaryBlueColor),
+
           /*
           suffixIcon: trailing != null
               ? GestureDetector(
@@ -123,7 +123,7 @@ class TradeInputField extends StatelessWidget {
           */
           border: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
           errorBorder: circularBorder.copyWith(borderSide: BorderSide(color: Colors.red),),
-          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor2),),
+          focusedBorder: circularBorder.copyWith(borderSide: BorderSide(color: primaryBlueColor),),
           enabledBorder: circularBorder.copyWith(borderSide: BorderSide(color: borderColor),),
         ),
       ),
